@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         history.scrollRestoration = 'manual';
     }
 
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, EaselPlugin, TextPlugin);
+    gsap.registerPlugin(ScrollTrigger, EaselPlugin, TextPlugin);
 
     let sections = gsap.utils.toArray(".section");
     let tlWelcome = gsap.timeline({repeat: -1})
