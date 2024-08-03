@@ -61,23 +61,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         onEnter: endAnimation
     }); 
 
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
-        sections.forEach((section, index) => {
-            ScrollTrigger.create({
-                trigger: section,
-                start: "top 95%",
-                end: "bottom 3%", 
-                //markers: true,
-                onEnter: () => {
-                    gsap.to(window, {duration: 1, scrollTo: {y: section, autoKill: false}, ease: "power"});
-                },
-                onEnterBack: () => {
-                    gsap.to(window, {duration: 1, scrollTo: {y: section, autoKill: false}, ease: "power"});
-                }
-            });
-        });
-    }
-
 
     window.addEventListener('beforeunload', () => {
         resetScrollTrigger();
