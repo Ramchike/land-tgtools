@@ -1,14 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-    // Disable the browser's default scroll restoration behavior
-
-
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
 
     gsap.registerPlugin(ScrollTrigger, EaselPlugin, TextPlugin);
 
-    let sections = gsap.utils.toArray(".section");
     let tlWelcome = gsap.timeline({repeat: -1})
     tlWelcome.to('.welcome-description', {text: "Сохраняйте удаленные сообщения", duration: 2}, ">2")
     tlWelcome.to('.welcome-description', {text: "Ставьте уникальные статусы", duration: 2}, ">2")
@@ -62,7 +55,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }); 
 
 
-    window.addEventListener('beforeunload', () => {
-        resetScrollTrigger();
-    });
 });
